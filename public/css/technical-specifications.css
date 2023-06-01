@@ -1,0 +1,16 @@
+.technical-specification-table {
+    max-width: 48rem;
+}
+
+.technical-specification-table td {
+    border: 1px solid #333;
+}
+
+.technical-specification-table thead {
+    background-color: #333;
+    color: #fff;
+}
+
+.technical-specification-table tr:nth-child(even) {
+    background-color: #DDD;
+}
