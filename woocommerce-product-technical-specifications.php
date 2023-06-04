@@ -38,7 +38,7 @@ function wpts_display_technical_specifications_editor($post) {
     echo '<tbody>';
     echo '  <tr class="wpts-specification-template">';
     echo '      <td>';
-    echo '          <span>[=]</span>';
+    echo '          <span class="wpts-specification-drag">↕️</span>';
     echo '      </td>';
     echo '      <td>';
     echo '          <input type="text" value="">';
@@ -47,7 +47,7 @@ function wpts_display_technical_specifications_editor($post) {
     echo '          <input type="text" value="">';
     echo '      </td>';
     echo '      <td>';
-    echo '          <a class="wpts-specification-delete">[X]</a>';
+    printf('          <button class="button wpts-specification-delete">%s</button>', esc_html(__('Delete', 'woocommerce-product-technical-specifications')));
     echo '      </td>';
     echo '  </tr>';
     if (!empty($meta)) {
@@ -58,7 +58,7 @@ function wpts_display_technical_specifications_editor($post) {
 
             echo '  <tr class="wpts-specification">';
             echo '      <td>';
-            echo '          <span>[=]</span>';
+            echo '          <span class="wpts-specification-drag">↕️</span>';
             echo '      </td>';
 
             echo '      <td>';
@@ -70,14 +70,24 @@ function wpts_display_technical_specifications_editor($post) {
             echo '      </td>';
 
             echo '      <td>';
-            printf('          <button class="wpts-specification-delete">%s</button>', esc_html(__('Delete', 'woocommerce-product-technical-specifications')));
+            printf('          <button class="button wpts-specification-delete">%s</button>', esc_html(__('Delete', 'woocommerce-product-technical-specifications')));
             echo '      </td>';
             echo '  </tr>';
         }
     }
     echo '</tbody>';
+    echo '<tfoot>';
+    echo '  <td>';
+    echo '  </td>';
+    echo '  <td>';
+    printf('    <button class="button wpts-specification-add-button">%s</button>', esc_html(__('Add a specification', 'woocommerce-product-technical-specifications')));
+    echo '  </td>';
+    echo '  <td>';
+    echo '  </td>';
+    echo '  <td>';
+    echo '  </td>';
+    echo '</tfoot>';
     echo '</table>';
-    printf('<button class="wpts-specification-add-button">%s</button>', esc_html(__('Add a specification', 'woocommerce-product-technical-specifications')));
 }
 
 add_action('save_post', 'wpts_save_technical_specifications');

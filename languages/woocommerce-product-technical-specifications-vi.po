@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: WooCommerce Product Technical Specifications\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-"
 "product-technical-specifications\n"
-"POT-Creation-Date: 2023-06-01T11:25:36+00:00\n"
-"PO-Revision-Date: 2023-06-01 18:29+0700\n"
+"POT-Creation-Date: 2023-06-04T06:31:52+00:00\n"
+"PO-Revision-Date: 2023-06-04 13:34+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi_VN\n"
@@ -21,22 +21,27 @@ msgid "WooCommerce Product Technical Specifications"
 msgstr "Thông số kỹ thuật cho sản phẩm WooCommerce"
 
 #: woocommerce-product-technical-specifications.php:28
-#: woocommerce-product-technical-specifications.php:104
+#: woocommerce-product-technical-specifications.php:109
 msgid "Technical Specifications"
 msgstr "Thông số kỹ thuật"
 
-#: woocommerce-product-technical-specifications.php:78
+#: woocommerce-product-technical-specifications.php:50
+#: woocommerce-product-technical-specifications.php:73
+msgid "Delete"
+msgstr "Xóa"
+
+#: woocommerce-product-technical-specifications.php:80
 msgid "Add a specification"
 msgstr "Thêm thông số"
 
-#: woocommerce-product-technical-specifications.php:115
+#: woocommerce-product-technical-specifications.php:120
 msgid "This product has not been added technical specifications yet."
 msgstr "Thông số kỹ thuật của sản phẩm hiện tại vẫn chưa được bổ sung."
 
-#: woocommerce-product-technical-specifications.php:123
+#: woocommerce-product-technical-specifications.php:128
 msgid "Specification"
 msgstr "Thông số"
 
-#: woocommerce-product-technical-specifications.php:126
+#: woocommerce-product-technical-specifications.php:131
 msgid "Value"
 msgstr "Giá trị"
