@@ -116,7 +116,7 @@ function wpts_display_technical_specification_tab() {
         return;
     }
     
-    echo '<table class="technical-specification-table">';
+    echo '<table class="wpts-technical-specification-table">';
     echo '    <thead>';
     echo '        <tr>';
     echo '            <th>';
