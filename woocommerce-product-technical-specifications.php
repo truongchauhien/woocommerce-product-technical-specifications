@@ -50,17 +50,19 @@ function wpts_display_technical_specifications_editor($post) {
     echo '          <a class="wpts-specification-delete">[X]</a>';
     echo '      </td>';
     echo '  </tr>';
-    
     if (!empty($meta)) {
-        $specifications = json_decode($meta);
-        foreach ($specifications as $specification => $value) {
+        $specifications = json_decode($meta, true);
+        foreach ($specifications as $specification) {
+            $name = $specification['name'];
+            $value = $specification['value'];
+
             echo '  <tr class="wpts-specification">';
             echo '      <td>';
             echo '          <span>[=]</span>';
             echo '      </td>';
 
             echo '      <td>';
-            echo "          <input type=\"text\" name=\"wpts-specification-name[]\" value=\"{$specification}\">";
+            echo "          <input type=\"text\" name=\"wpts-specification-name[]\" value=\"{$name}\">";
             echo '      </td>';
 
             echo '      <td>';
@@ -68,14 +70,14 @@ function wpts_display_technical_specifications_editor($post) {
             echo '      </td>';
 
             echo '      <td>';
-            echo '          <a class="wpts-specification-delete">[X]</a>';
+            printf('          <button class="wpts-specification-delete">%s</button>', esc_html(__('Delete', 'woocommerce-product-technical-specifications')));
             echo '      </td>';
             echo '  </tr>';
         }
     }
     echo '</tbody>';
     echo '</table>';
-    printf('<button class="wpts-specification-add-button">%s</button>', __('Add a specification', 'woocommerce-product-technical-specifications'));
+    printf('<button class="wpts-specification-add-button">%s</button>', esc_html(__('Add a specification', 'woocommerce-product-technical-specifications')));
 }
 
 add_action('save_post', 'wpts_save_technical_specifications');
@@ -87,7 +89,10 @@ function wpts_save_technical_specifications($post_id) {
 
         $specifications = array();
         foreach ($names as $index => $name) {
-            $specifications[$name] = $values[$index];
+            $specifications[] = [
+                'name' => $name,
+                'value' => $values[$index]
+            ];
         }
 
         update_post_meta(
@@ -120,18 +125,20 @@ function wpts_display_technical_specification_tab() {
     echo '    <thead>';
     echo '        <tr>';
     echo '            <th>';
-    echo '                ' . __('Specification', 'woocommerce-product-technical-specifications');
+    echo '                ' . esc_html(__('Specification', 'woocommerce-product-technical-specifications'));
     echo '            </th>';
     echo '            <th>';
-    echo '                ' . __('Value', 'woocommerce-product-technical-specifications');
+    echo '                ' . esc_html(__('Value', 'woocommerce-product-technical-specifications'));
     echo '            </th>';
     echo '        </tr>';
     echo '    </thead>';
     echo '    <tbody>';
-    $specifications = json_decode($meta);
-    foreach ($specifications as $specification => $value) {
+    $specifications = json_decode($meta, true);
+    foreach ($specifications as $specification) {
+        $name = esc_html($specification['name']);
+        $value = esc_html($specification['value']);
         echo '        <tr>';
-        echo "            <td>{$specification}</td>";
+        echo "            <td>{$name}</td>";
         echo "            <td>{$value}</td>";
         echo '        </tr>';
     }
