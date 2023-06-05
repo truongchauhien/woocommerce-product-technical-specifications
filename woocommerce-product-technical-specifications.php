@@ -108,7 +108,7 @@ function wpts_save_technical_specifications($post_id) {
         update_post_meta(
             $post_id,
             'wpts_technical_specifications',
-            json_encode($specifications)
+            json_encode($specifications, JSON_UNESCAPED_UNICODE)
         );
     }
 }
