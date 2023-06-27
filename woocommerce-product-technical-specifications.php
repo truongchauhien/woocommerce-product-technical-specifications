@@ -1,6 +1,7 @@
 <?php
 /*
  * Plugin Name: WooCommerce Product Technical Specifications
+ * Plugin URI: https://github.com/truongchauhien/woocommerce-product-technical-specifications
  * Text Domain: woocommerce-product-technical-specifications
  * Domain Path: /languages
  */
