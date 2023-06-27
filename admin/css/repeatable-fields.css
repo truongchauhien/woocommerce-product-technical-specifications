@@ -2,16 +2,18 @@
     width: 100%;
 }
 
-.wpts-specification-table > tbody > tr > td:nth-of-type(1) {
-    width: 0;
-}
-
-.wpts-specification-table > tbody > tr > td:nth-of-type(4) {
-    width: 0;
+.wpts-specification-table > thead > tr > td:nth-child(n+2):nth-child(-n+3) {
+    background-color: #EEE;
+    font-weight: bold;
 }
 
 .wpts-specification-table input[type="text"] {
     width: 100%;
+}
+
+.wpts-specification-table > tbody > tr > td:nth-of-type(1),
+.wpts-specification-table > tbody > tr > td:nth-of-type(4) {
+    width: 0;
 }
 
 .wpts-specification-table .wpts-specification-template {

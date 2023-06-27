@@ -35,6 +35,13 @@ function wpts_display_technical_specifications_editor($post) {
     $meta = get_post_meta($post->ID, 'wpts_technical_specifications', true);
     echo '<input type="hidden" name="wpts_nonce" value="'.wp_create_nonce(basename(__FILE__)).'" />';
     echo '<table class="wpts-specification-table">';
+    echo '<thead>';
+    echo '  <tr>';
+    echo '      <td></td>';
+    printf('    <td>%s</td>', esc_html(__('Specification', 'woocommerce-product-technical-specifications')));
+    printf('    <td>%s</td>', esc_html(__('Value', 'woocommerce-product-technical-specifications')));
+    echo '  </tr>';
+    echo '</thead>';
     echo '<tbody>';
     echo '  <tr class="wpts-specification-template">';
     echo '      <td>';
