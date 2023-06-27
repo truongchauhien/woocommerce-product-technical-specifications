@@ -53,8 +53,8 @@ function wpts_display_technical_specifications_editor($post) {
     if (!empty($meta)) {
         $specifications = json_decode($meta, true);
         foreach ($specifications as $specification) {
-            $name = $specification['name'];
-            $value = $specification['value'];
+            $name = esc_attr($specification['name']);
+            $value = esc_attr($specification['value']);
 
             echo '  <tr class="wpts-specification">';
             echo '      <td>';
@@ -108,7 +108,7 @@ function wpts_save_technical_specifications($post_id) {
         update_post_meta(
             $post_id,
             'wpts_technical_specifications',
-            json_encode($specifications, JSON_UNESCAPED_UNICODE)
+            json_encode($specifications, JSON_UNESCAPED_UNICODE | JSON_HEX_APOS)
         );
     }
 }
