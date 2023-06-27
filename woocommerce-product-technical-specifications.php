@@ -127,7 +127,7 @@ function wpts_display_technical_specification_tab() {
     global $post;
     $meta = get_post_meta($post->ID, 'wpts_technical_specifications', true);
     if (!$meta) {
-        echo __('This product has not been added technical specifications yet.', 'woocommerce-product-technical-specifications');
+        echo esc_html(__('This product has not been added technical specifications yet.', 'woocommerce-product-technical-specifications'));
         return;
     }
     
